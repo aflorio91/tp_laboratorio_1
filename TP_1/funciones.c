@@ -34,7 +34,7 @@ int division(int A, int B)
 {
     //printf("5- Calcular la division (A/B)\n");
     int result;
-    if (A == 0 || B ==0)
+    if (A == 0 || B ==0 || A < B)
     {
         result = 0;
     }
