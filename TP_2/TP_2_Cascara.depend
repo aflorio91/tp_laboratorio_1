@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1504478082 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_2_cascara\funciones.c
+	"funciones.h"
+	<stdio.h>
+
+1504477971 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_2_cascara\funciones.h
+
+1504477971 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1504478317 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_2_cascara finished\funciones.c
+	"funciones.h"
+	<stdio.h>
+
+1504477971 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_2_cascara finished\funciones.h
+
+1504478485 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_2_cascara finished\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	<conio.h>
+
