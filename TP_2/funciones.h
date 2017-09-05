@@ -11,6 +11,13 @@ typedef struct {
 }EPersona;
 
 /**
+ * Inicializa en 0 los 20 lista[#].estado
+ * @param array de personas
+ * @return void
+ */     
+void set_Estado(EPersona lista[]);
+
+/**
  * Obtiene el primer indice libre del array.
  * @param lista el array se pasa como parametro.
  * @return el primer indice disponible
