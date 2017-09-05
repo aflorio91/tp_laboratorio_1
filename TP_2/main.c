@@ -8,8 +8,9 @@ int main()
     char seguir='s';
     int opcion=0;
     EPersona array_Personas[20];
-
-    load_Array(array_Personas);//carga 5 datos de personas cualesquiera al array de personas vacío
+    
+    set_Estado(array_Personas);
+    load_Array(array_Personas);//carga 5 datos de personas cualesquiera al array de personas vacÃ­o
 
     while(seguir=='s')
     {
