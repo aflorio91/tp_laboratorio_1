@@ -1,6 +1,14 @@
 #include "funciones.h"
 #include <stdio.h>
 
+void set_Estado(EPersona lista[])
+{
+    for (int i =0;i<20;i++)
+    {
+        lista[i].edad = 0;
+    }
+}
+
 void load_Array(EPersona lista[])
 {
     char name[5][20] = {{"Eliana"},{"Ludmila"},{"Lucas"},{"Mariana"},{"Hernan"}};
