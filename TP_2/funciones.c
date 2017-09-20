@@ -125,21 +125,61 @@ void imprimirEdades(EPersona lista[])
     int cont1 = 0;//<18
     int cont2 = 0;//19<35
     int cont3 = 0;//35<
+    int i, flag=0,mayor;
 
-        for( int j=0; j<20; j++ )
+    for( int j=0; j<20; j++ )
+    {
+        if( lista[j].estado == 1 && lista[j].edad <18 )
         {
-            if( lista[j].estado == 1 && lista[j].edad <18 )
-            {
-                cont1++;
-            }
-            else if( lista[j].estado == 1 && lista[j].edad < 35)
-            {
-                cont2++;
-            }
-            else if( lista[j].estado == 1 && lista[j].edad > 35)
-            {
-                cont3++;
-            }
+            cont1++;
+        }
+        else if( lista[j].estado == 1 && lista[j].edad < 35)
+        {
+            cont2++;
+        }
+        else if( lista[j].estado == 1 && lista[j].edad > 35)
+        {
+            cont3++;
+        }
     }
-    printf("\nEdades <18: %d\n19<35: %d\n35<: %d\n",cont1,cont2,cont3);
+    if(cont1 >= cont2 && cont1 >= cont3)
+    {
+        mayor = cont1;
+    }
+    else
+    {
+        if(cont2 >= cont1 && cont2 >= cont3)
+        {
+            mayor = cont2;
+        }
+        else
+        {
+            mayor = cont3;
+        }
+    }
+    //printf("\nEdades:\n<18: %d\n19<35: %d\n35<: %d\n",cont1,cont2,cont3);
+    for( i = mayor; i>0; i--)
+    {
+        if(i<= cont1)
+        {
+            printf("*");
+        }
+        if(i<= cont2)
+        {
+            flag=1;
+            printf("\t*");
+        }
+        if(i<= cont3)
+        {
+            if(flag==0)
+                printf("\t\t*");
+            if(flag==1)
+                printf("\t*");
+
+        }
+        printf("\n");
+    }
+    printf("-------------------");
+    printf("\n|<18\t19-35\t>35");
+    printf("\n   %d\t%d\t%d\n", cont1, cont2, cont3);
 }
