@@ -155,7 +155,7 @@ void show_peliculas(EMovie unArraydePeliculas[],int CANT)
 }
 void cargarArray_Peliculas(EMovie unArraydePeliculas[], int CANT)
 {
-    printf("\n***AGREGAR PELICULAS***\n");
+    printf("\n***AGREGAR PELICULAS AL ARRAY***\n");
     char seguir = 's';
 
     while(seguir == 's')
@@ -201,11 +201,33 @@ void borrar_Peliculas(EMovie unArraydePeliculas[], int CANT)
     }
 }
 
+void generar_html(EMovie unArraydePeliculas[], int CANT )
+{
+    FILE *fp;
 
+    fp = fopen("index.txt", "w");
 
+    if(fp == NULL)
+    {
+        printf("\nNo se pudo abrir el archivo\n");
 
-
-
-
-
-
+    }
+    else
+    {
+        for ( int i=0; i<CANT; i++)
+        {
+            if(unArraydePeliculas[i].codigo !=0)
+            {
+                fprintf(fp,"<article class='col-md-4 article-intro'><a href='#'>");
+                fprintf(fp,"<img class='img-responsive img-rounded' src='%s'alt=''>",unArraydePeliculas[i].linkImagen);
+                fprintf(fp,"</a><h3><a href='#'>%s</a></h3><ul>",unArraydePeliculas[i].titulo);
+                fprintf(fp,"<li>Género:%s</li>",unArraydePeliculas[i].genero);
+                fprintf(fp,"<li>Puntaje:%.01f</li>",unArraydePeliculas[i].puntaje);
+                fprintf(fp,"<li>Duración:%d</li></ul>",unArraydePeliculas[i].duracion);
+                fprintf(fp,"<p>%s</p></article>",unArraydePeliculas[i].descripcion);
+            }
+        }
+    }
+    printf("\nArchivo creado con exito\n");
+    fclose(fp);
+}
