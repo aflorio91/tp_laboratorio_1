@@ -1,7 +1,5 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
-#include "funciones.c"
-
 typedef struct
 {
     int codigo;
@@ -9,12 +7,15 @@ typedef struct
     char genero[20];
     int duracion;
     char descripcion[50];
-    int puntaje;
+    float puntaje;
     char linkImagen[50];
 }EMovie;
-
-void hardcode_array(EMovie unArray[]);
+int esSoloLetras(char str[]);
+int esNumerico(char str[]);
+int esAlfaNumerico(char str[]);
+void hardcode_array(EMovie array_Peliculas[], int CANT);
 void request_Pelicula(EMovie unaPelicula);
-void show_pelicula(EMovie unaPelicula);
+void show_peliculas(EMovie unArraydePeliculas[],int CANT);
 void cargarArray_Peliculas(EMovie unArraydePeliculas[], int CANT);
+void borrar_Peliculas(EMovie unArraydePeliculas[], int CANT);
 #endif // FUNCIONES_H_INCLUDED
