@@ -210,7 +210,7 @@ void generar_html(EMovie unArraydePeliculas[], int CANT )
     if(fp == NULL)
     {
         printf("\nNo se pudo abrir el archivo\n");
-
+        exit(0);
     }
     else
     {
@@ -227,7 +227,7 @@ void generar_html(EMovie unArraydePeliculas[], int CANT )
                 fprintf(fp,"<p>%s</p></article>",unArraydePeliculas[i].descripcion);
             }
         }
+        printf("\nArchivo creado con exito\n");
     }
-    printf("\nArchivo creado con exito\n");
     fclose(fp);
 }
