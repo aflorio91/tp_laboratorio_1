@@ -205,7 +205,7 @@ void generar_html(EMovie unArraydePeliculas[], int CANT )
 {
     FILE *fp;
 
-    fp = fopen("index.txt", "w");
+    fp = fopen("index.html", "w");
 
     if(fp == NULL)
     {
@@ -221,9 +221,9 @@ void generar_html(EMovie unArraydePeliculas[], int CANT )
                 fprintf(fp,"<article class='col-md-4 article-intro'><a href='#'>");
                 fprintf(fp,"<img class='img-responsive img-rounded' src='%s'alt=''>",unArraydePeliculas[i].linkImagen);
                 fprintf(fp,"</a><h3><a href='#'>%s</a></h3><ul>",unArraydePeliculas[i].titulo);
-                fprintf(fp,"<li>Género:%s</li>",unArraydePeliculas[i].genero);
+                fprintf(fp,"<li>GÃ©nero:%s</li>",unArraydePeliculas[i].genero);
                 fprintf(fp,"<li>Puntaje:%.01f</li>",unArraydePeliculas[i].puntaje);
-                fprintf(fp,"<li>Duración:%d</li></ul>",unArraydePeliculas[i].duracion);
+                fprintf(fp,"<li>DuraciÃ³n:%d</li></ul>",unArraydePeliculas[i].duracion);
                 fprintf(fp,"<p>%s</p></article>",unArraydePeliculas[i].descripcion);
             }
         }
