@@ -6,9 +6,9 @@ typedef struct
     char titulo[50];
     char genero[20];
     int duracion;
-    char descripcion[50];
+    char descripcion[300];
     float puntaje;
-    char linkImagen[50];
+    char linkImagen[300];
 }EMovie;
 /**
  * \brief Verifica si el valor recibido contiene solo letras

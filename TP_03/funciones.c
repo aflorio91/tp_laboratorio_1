@@ -41,9 +41,9 @@ void hardcode_array(EMovie array_Peliculas[], int CANT) //hardcodea datos al arr
     char auxiliarTitulo[3][50] = {{"The Room"},{"Back to the future"},{"The Langoliers"}};
     char auxiliarGenero[3][50] = {{"Drama"},{"Aventura"},{"Misterio"}};
     int auxiliarDuracion[3] = {{199},{96},{180}};
-    char auxiliarDescripcion[3][50] = {{"Johnny is a successful banker..."},{"A young man is accidentally sent thirty years into the past..."},{"Most of the passengers on an airplane disappear..."}};
+    char auxiliarDescripcion[3][300] = {{"Johnny is a successful banker who lives happily in a San Francisco townhouse with his fiancée, Lisa. One day, inexplicably, she gets bored with him and decides to seduce his best friend, Mark. From there, nothing will be the same again."},{"Marty McFly, a seventeen-year-old high school student, is accidentally sent thirty years into the past in a time-travelling DeLorean invented by his close friend, the maverick scientist Doc Brown."},{"Most of the passengers on an airplane disappear, and the remainder land the plane in a mysteriously barren airport."}};
     float auxiliarPuntaje[3] = {{3.6},{8.5},{6.1}};
-    char auxiliarLink[3][50] = {{"http://www.imdb.com/title/tt0368226/?ref_=nv_sr_1"},{"http://www.imdb.com/title/tt0088763/?ref_=nv_sr_1"},{"http://www.imdb.com/title/tt0112040/?ref_=nv_sr_1"}};
+    char auxiliarLink[3][300] = {{"https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4MTU1MzgwOV5BMl5BanBnXkFtZTcwNjM1MTAwMQ@@._V1_UY268_CR12,0,182,268_AL_.jpg"},{"https://images-na.ssl-images-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg"},{"https://images-na.ssl-images-amazon.com/images/M/MV5BNWNmNmVhZDYtM2Y1Yi00ZmNjLThlNTEtN2JiNjY4NGVhOTcyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY268_CR10,0,182,268_AL_.jpg"}};
 
     for (int i=0; i<CANT; i++)
     {
@@ -105,11 +105,11 @@ void request_Pelicula(EMovie unaPelicula)
     unaPelicula.duracion = atoi(input);
 
     fflush(stdin);
-    printf("\nIngresar breve descripcion: ");
+    printf("\nIngresar  descripcion (300 caracteres max.): ");
     gets(input);
-    while ( esAlfaNumerico(input) == 0 || strlen(input)>=50 )
+    while ( esAlfaNumerico(input) == 0 || strlen(input)>=300 )
     {
-        printf("\nIngrese una descripcion valida con menos de 50 caracteres: ");
+        printf("\nIngrese una descripcion valida con menos de 300 caracteres: ");
         gets(input);
     }
     strcpy(unaPelicula.descripcion, input);
@@ -125,11 +125,11 @@ void request_Pelicula(EMovie unaPelicula)
     unaPelicula.puntaje = atof(input);
 
     fflush(stdin);
-    printf("\nIngresar link de imagen (50 caracteres max.): ");
+    printf("\nIngresar link de imagen (300 caracteres max.): ");
     gets(input);
-    while (esAlfaNumerico(input) == 0 || strlen(input)>=50 )
+    while (esAlfaNumerico(input) == 0 || strlen(input)>=300 )
     {
-        printf("\nIngresar un link de imagen valido: ");
+        printf("\nIngresar un link de imagen valido menor a 300 caracteres: ");
         gets(input);
     }
     strcpy(unaPelicula.linkImagen, input);
@@ -221,9 +221,9 @@ void generar_html(EMovie unArraydePeliculas[], int CANT )
                 fprintf(fp,"<article class='col-md-4 article-intro'><a href='#'>");
                 fprintf(fp,"<img class='img-responsive img-rounded' src='%s'alt=''>",unArraydePeliculas[i].linkImagen);
                 fprintf(fp,"</a><h3><a href='#'>%s</a></h3><ul>",unArraydePeliculas[i].titulo);
-                fprintf(fp,"<li>GÃ©nero:%s</li>",unArraydePeliculas[i].genero);
+                fprintf(fp,"<li>Género:%s</li>",unArraydePeliculas[i].genero);
                 fprintf(fp,"<li>Puntaje:%.01f</li>",unArraydePeliculas[i].puntaje);
-                fprintf(fp,"<li>DuraciÃ³n:%d</li></ul>",unArraydePeliculas[i].duracion);
+                fprintf(fp,"<li>Duración:%d</li></ul>",unArraydePeliculas[i].duracion);
                 fprintf(fp,"<p>%s</p></article>",unArraydePeliculas[i].descripcion);
             }
         }

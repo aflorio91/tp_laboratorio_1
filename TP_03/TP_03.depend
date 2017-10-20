@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1508542089 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_03\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1508542038 c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_03\funciones.h
+
+1508541212 source:c:\users\andres\documents\utn\fr avellaneda\programación i\drive\tp_03\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
